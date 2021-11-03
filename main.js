@@ -1,9 +1,9 @@
-const API_KEY = 'QpgRUUKpKz0w06FdToPCQS0O7njhuUYo'
-const API_URL = `https://api.giphy.com/v1/gifs/random?tag=cat&api_key=${API_KEY}&limit=1`
+const API_KEY = 'QpgRUUKpKz0w06FdToPCQS0O7njhuUYo';
+const API_URL = `https://api.giphy.com/v1/gifs/random?tag=cat&api_key=${API_KEY}&limit=1`;
 
-const slider = document.getElementById('slider')
-const next = document.getElementById('next')
-const previous = document.getElementById('previous')
+const slider = document.getElementById('slider');
+const next = document.getElementById('next');
+const previous = document.getElementById('previous');
 
 // This will insert a new GIF in the slider
 const insertNewCat = () => {
@@ -18,14 +18,16 @@ const insertNewCat = () => {
 // Change slide receive a direction
 // -1 for the previous slide
 // +1 for the next one
-const changeSlide = (direction) => {
-  const images = slider.querySelectorAll('img');
+const changeSlide = (event) => {
+  const direction = Number.parseInt(event.currentTarget.dataset.offset, 10);
   const currentIndex = Number.parseInt(slider.getAttribute('current-slide'), 10);
   const nextIndex = currentIndex + direction;
-  images[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'center'});
+
+  const images = slider.querySelectorAll('img');
+  images[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
   slider.setAttribute('current-slide', nextIndex);
-  if (direction > 0) { insertNewCat() }
+  if (direction > 0) { insertNewCat(); }
 };
 
-next.addEventListener('click', () => { changeSlide(+1); });
-previous.addEventListener('click', () => { changeSlide(-1); });
+next.addEventListener('click', changeSlide);
+previous.addEventListener('click', changeSlide);
