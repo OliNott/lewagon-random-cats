@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+body {
+  background: #F6EABE;
+  color: #3e4949;
+  font-family: 'Parisienne', cursive;
+}
+
+.d-flex       { display: flex }
+.j-c-between  { justify-content: space-between }
+.a-i-center   { align-items: center }
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#slider {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-gap: 100px;
+  grid-auto-flow: column;
+  overflow: scroll;
+  height: 400px;
+  width: 400px;
+}
+#slider > img {
+  width: 400px !important;
+  height: 400px !important;
+  object-fit: cover;
+}
+
+/* Hide scrollbar  */
+#slider::-webkit-scrollbar {
+  display: none;
+}
+#slider {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.controls {
+  background: #C8E3D4;
+  padding: 8px 16px;
+  margin: 0 12px;
+}
+
+.controls:hover {
+  cursor: pointer;
+}
