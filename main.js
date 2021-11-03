@@ -15,9 +15,6 @@ const insertNewCat = () => {
     });
 };
 
-// Change slide receive a direction
-// -1 for the previous slide
-// +1 for the next one
 const changeSlide = (event) => {
   const direction = Number.parseInt(event.currentTarget.dataset.offset, 10);
   const currentIndex = Number.parseInt(slider.getAttribute('current-slide'), 10);
