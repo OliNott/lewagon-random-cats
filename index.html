@@ -3,13 +3,36 @@
   <head>
     <meta charset="UTF-8">
     <title>Playground - JavaScript 101</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <p style="margin-top: 40vh; text-align: center; font: normal 24px monospace;">
-      Open the console 🤓
-    </p>
-
-    <!-- Add some HTML in here -->
+    <div class="container">
+      <div class="d-flex j-c-between a-i-center">
+        <img src="images/sad-cat.gif" alt="This is a very sad cat 🥺">
+        <h1>I love cat gifs</h1>
+        <img src="images/sad-cat.gif" alt="This is a very sad cat 🥺">
+      </div>
+      <h2>And here is my collection</h2>
+      
+      
+      <!-- CUSTOM SLIDER HERE -->
+      <div class="d-flex j-c-between a-i-center">
+        <div id="previous" class="controls">
+          ← Previous
+        </div>
+        
+        <div id="slider" current-slide="0">
+          <img src="https://cataas.com/cat/says/we love" alt="">
+          <img src="https://cataas.com/cat/says/javascript" alt="">
+        </div>
+        
+        <div id="next" class="controls">
+          Next →
+        </div>
+        <!-- CUSTOM SLIDER HERE -->
+      </div>
+    </div>
 
     <script src="main.js"></script>
   </body>
